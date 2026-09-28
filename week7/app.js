@@ -30,17 +30,7 @@ app.post("/register", (req, res) => {
         age: age
     });
 });
-app.get("/students", async (req, res) => {
-    try {
-        const students = await Student.find();
 
-        res.json(students);
-    } catch (error) {
-        res.status(500).json({
-            message: error.message
-        });
-    }
-});
 app.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}`);
 });
